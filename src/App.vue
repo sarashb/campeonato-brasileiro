@@ -12,7 +12,7 @@
       <v-list nav dense>
         <v-list-item-group
           v-model="group"
-          active-class="green darken-1"
+          active-class="green darken-2"
         >
           <v-list-item>
             <v-list-item-icon>
@@ -30,19 +30,23 @@
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
-    <v-main> </v-main>
+    <v-main> 
+        <MeuInicio/>
+    </v-main>
   </v-app>
 </template>
 
 <script>
+import MeuInicio from './components/MeuInicio'
 export default {
   name: "App",
-
-  components: {},
 
   data: () => ({
     drawer: false,
     group:null,
   }),
+  components: {
+    MeuInicio
+  }
 };
 </script>
