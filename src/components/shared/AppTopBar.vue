@@ -32,10 +32,10 @@
 
 <script>
 export default {
-    name: 'AppTopBar',
-    data: () => ({
-        drawer: false,
-        group:null,
+  name: "AppTopBar",
+  data: () => ({
+    drawer: false,
+    group: null,
   }),
 };
 </script>
