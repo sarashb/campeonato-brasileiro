@@ -6,13 +6,22 @@
         <template v-slot:default>
           <thead>
             <tr>
-              <th class="text-left">Clubes</th>
+              <th colspan="2" class="text-left">Clubes</th>
               <th class="text-left">Pontos</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="clube of clubesLista" :key="clube.id">
-              <td>{{ clube.nome }}</td>
+            <tr v-for="(clube, index) of clubesLista" :key="clube.id">
+              <td> {{ index + 1 }}</td>
+              <td>
+                <v-avatar size="24" class>
+                    <img 
+                        :src="clube.escudo" 
+                        :alt="clube.nome"
+                    >
+                </v-avatar>
+                <span class="pl-2">{{ clube.nome }}</span>
+              </td>
               <td>{{ clube.pontos }}</td>
             </tr>
           </tbody>
