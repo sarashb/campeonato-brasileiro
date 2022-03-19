@@ -12,13 +12,10 @@
           </thead>
           <tbody>
             <tr v-for="(clube, index) of clubesOrdenados" :key="clube.id">
-              <td> {{ index + 1 }}</td>
+              <td>{{ index + 1 }}</td>
               <td>
                 <v-avatar size="24" class>
-                    <img 
-                        :src="clube.escudo" 
-                        :alt="clube.nome"
-                    >
+                  <img :src="clube.escudo" :alt="clube.nome" />
                 </v-avatar>
                 <span class="pl-2">{{ clube.nome }}</span>
               </td>
@@ -47,13 +44,13 @@ export default {
       });
   },
   computed: {
-      clubesOrdenados() {
-          const listaComputada = this.clubesLista.slice(0).sort(
-              (a,b) => a.pontos > b.pontos ? -1 : 1
-          );
-          return listaComputada;    
-      }
-  }
+    clubesOrdenados() {
+      const listaComputada = this.clubesLista
+        .slice(0)
+        .sort((a, b) => (a.pontos > b.pontos ? -1 : 1));
+      return listaComputada;
+    },
+  },
 };
 </script>
 
